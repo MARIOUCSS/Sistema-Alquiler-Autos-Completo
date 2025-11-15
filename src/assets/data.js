@@ -3,7 +3,7 @@ import search from "./search.svg";
 // import user from "./user.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
-// import bg from "./bg.png";
+import bg from "./bg.png";
 // import right from "./right.svg";
 // import pin from "./pin.svg";
 // import calendar from "./calendar.svg";
@@ -67,7 +67,7 @@ export const assets = {
   // user,
   menu,
   close,
-  // bg,
+  bg,
   // right,
   // pin,
   // calendar,

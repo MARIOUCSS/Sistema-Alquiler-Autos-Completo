@@ -1,10 +1,19 @@
 import React from "react";
+import Hero from "../Components/Hero";
+import About from "../Components/About";
+import Features from "../Components/Features";
+import Banner from "../Components/Banner";
+import Testimonial from "../Components/Testimonial";
 
 function Home() {
   return (
-    <div className="h-screen">
-      <div className="mt-50">Home Page</div>
-    </div>
+    <>
+      <Hero />
+      <About />
+      <Features />
+      <Banner />
+      <Testimonial />
+    </>
   );
 }
 

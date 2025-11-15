@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { assets } from "../assets/data";
 import Navbar from "./Navbar";
 import { Link, useLocation } from "react-router-dom";
 function Header() {
-  const [menuOpened, setmenuOpened] = useState(true);
+  const [menuOpened, setmenuOpened] = useState(false);
   const [active, setactive] = useState(false);
   const [showSearch, setshowSearch] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
   const isHomePage = location.pathname.endsWith("/");
   const toggleMenu = () => setmenuOpened((prev) => !prev);
@@ -17,6 +18,21 @@ function Header() {
   // isHomePage = true ✅
   //ishome es false al invertir false no se aplica el blanco pero si es false al invertir true y por ende
   //se aplica el true
+  useEffect(() => {
+    const handelScroll = () => {
+      const currentScroolly = window.scrollY;
+      if (currentScroolly > lastScrollY && currentScroolly > 50) {
+        setactive(true);
+      } else if (lastScrollY > currentScroolly) {
+        setactive(false);
+      }
+      setLastScrollY(currentScroolly);
+    };
+    window.addEventListener("scroll", handelScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handelScroll);
+    };
+  }, [lastScrollY]);
   return (
     <header
       className={`${active ? "bg-white shadow-sm py-2" : "py-3"} ${
