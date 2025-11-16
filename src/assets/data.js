@@ -1,12 +1,12 @@
 import logoImg from "./logo.png";
 import search from "./search.svg";
-// import user from "./user.svg";
+import user from "./user.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
 import bg from "./bg.png";
 // import right from "./right.svg";
-// import pin from "./pin.svg";
-// import calendar from "./calendar.svg";
+import pin from "./pin.svg";
+import calendar from "./calendar.svg";
 // import star from "./star.svg";
 // import sliders from "./sliders.svg";
 // import car from "./car.svg";
@@ -64,13 +64,13 @@ import bg from "./bg.png";
 export const assets = {
   logoImg,
   search,
-  // user,
+  user,
   menu,
   close,
   bg,
   // right,
-  // pin,
-  // calendar,
+  pin,
+  calendar,
   // star,
   // sliders,
   // odometer,

@@ -107,6 +107,14 @@ function Header() {
                 className={`lg:hidden cursor-pointer text-xl`}
               />
             )}
+            <div>
+              <div>
+                <button className="btn-solid bg-black flexCenter gap-2 rounded-full text-white">
+                  Login
+                  <img src={assets.user} alt="iconuser" className="invert" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
