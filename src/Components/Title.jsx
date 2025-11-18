@@ -24,5 +24,4 @@ function Title({
     </div>
   );
 }
-1:53
 export default Title;

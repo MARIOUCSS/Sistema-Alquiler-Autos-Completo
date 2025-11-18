@@ -46,8 +46,8 @@ import calendar from "./calendar.svg";
 // import cImg2 from "../assets/cImg2.png";
 // import cImg3 from "../assets/cImg3.png";
 // import cImg4 from "../assets/cImg4.png";
-// import about1 from "../assets/about1.png";
-// import about2 from "../assets/about2.png";
+import about1 from "../assets/about1.png";
+import about2 from "../assets/about2.png";
 // import banner from "../assets/banner.png";
 // import agencyReg from "../assets/agencyReg.png";
 // import uploadIcon from "../assets/upload_icon.png";
@@ -96,8 +96,8 @@ export const assets = {
   // user1,
   // user2,
   // user3,
-  // about1,
-  // about2,
+  about1,
+  about2,
   // banner,
   // agencyReg,
   // uploadIcon,

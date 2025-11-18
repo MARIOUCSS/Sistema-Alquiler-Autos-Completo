@@ -1,13 +1,56 @@
 import React, { useEffect, useState } from "react";
 import { assets } from "../assets/data";
 import Navbar from "./Navbar";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useUser, useClerk, UserButton } from "@clerk/clerk-react";
 function Header() {
   const [menuOpened, setmenuOpened] = useState(false);
   const [active, setactive] = useState(false);
   const [showSearch, setshowSearch] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
+  const { user } = useUser();
+  const { openSignIn } = useClerk();
+  const navigate = useNavigate();
+  // const BookingIcon = () => (
+  //   <svg
+  //     xmlns="http://www.w3.org/2000/svg"
+  //     width="24"
+  //     height="24"
+  //     viewBox="0 0 36 36"
+  //     fill="none"
+  //     stroke="currentColor"
+  //     stroke-width="2"
+  //     stroke-linecap="round"
+  //     stoke-linejoin="round"
+  //     class="lucide lucide-scroll-text-icon lucide-scroll-text"
+  //   >
+  //     <path d="M15 12h-5" />
+  //     <path d="M15 8h-5" />
+  //     <path d="M19 17V5a2 2 0 0-2-2H4" />
+  //     <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 " />
+  //   </svg>
+  // );
+  const BookingIcon = () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 36 36"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-scroll-text-icon lucide-scroll-text"
+    >
+      <path d="M15 12h-5" />
+      <path d="M15 8h-5" />
+      <path d="M19 17V5a2 2 0 0-2-2H4" />
+      <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 " />
+    </svg>
+  );
+
   const isHomePage = location.pathname.endsWith("/");
   const toggleMenu = () => setmenuOpened((prev) => !prev);
   // location.pathname = "/"
@@ -107,13 +150,60 @@ function Header() {
                 className={`lg:hidden cursor-pointer text-xl`}
               />
             )}
-            <div>
-              <div>
-                <button className="btn-solid bg-black flexCenter gap-2 rounded-full text-white">
+
+            <div className="group">
+              {/* {user ? (
+                <UserButton
+                  appearance={{
+                    elements: {
+                      width: "42px",
+                      height: "42px",
+                    },
+                  }}
+                >
+                  <UserButton.MenuItems>
+                    <UserButton.Action
+                      label="My Booking"
+                      onClick={() => navigate("/my-booking")}
+                    />
+                  </UserButton.MenuItems>
+                </UserButton>
+              ) : (
+                <button
+                  onClick={openSignIn}
+                  className="btn-solid bg-black flexCenter gap-2 rounded-full text-white"
+                >
                   Login
                   <img src={assets.user} alt="iconuser" className="invert" />
                 </button>
-              </div>
+              )} */}
+              {user ? (
+                <div className="flex items-center gap-4">
+                  <button
+                    onClick={() => navigate("/my-booking")}
+                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+                  >
+                    My Booking
+                  </button>
+
+                  <UserButton
+                    appearance={{
+                      elements: {
+                        width: "42px",
+                        height: "42px",
+                      },
+                    }}
+                  />
+                </div>
+              ) : (
+                <button
+                  onClick={openSignIn}
+                  className="btn-solid bg-black flexCenter gap-2 rounded-full text-white"
+                >
+                  Login
+                  <img src={assets.user} alt="iconuser" className="invert" />
+                </button>
+              )}
             </div>
           </div>
         </div>
