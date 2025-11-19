@@ -18,7 +18,7 @@ function Title({
         >
           {para
             ? para
-            : "Find reliable cart with transparent pricing, verified inspection, flexible pickup and delivery option"}
+            : "Find a reliable car with transparent pricing, verified inspections, flexible pickup and delivery options, and 24/7 customer support for a hassle-free rental or purchase experience."}
         </p>
       </div>
     </div>
