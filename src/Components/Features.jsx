@@ -19,6 +19,7 @@ import "swiper/css";
 // import required modules
 // import { Autoplay } from "swiper/modules";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Item from "./Item";
 function Features() {
   const [features, setFeatures] = useState([]);
 
@@ -68,7 +69,11 @@ function Features() {
         modules={[Autoplay]}
         className="h-[478px] md:h-[533px] xl:h-[422px] mt-5 bg-red-300"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
+        {features.slice(0, 3).map((car) => (
+          <SwiperSlide>
+            <Item car={car} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </section>
   );
