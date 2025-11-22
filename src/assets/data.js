@@ -12,10 +12,10 @@ import sliders from "./sliders.svg";
 // import car from "./car.svg";
 // import carBlack from "./car-black.svg";
 // import carPlus from "./car-plus.svg";
-// import transmission from "./transmission.svg";
-// import seats from "./seats.svg";
-// import fuelType from "./fuel-type.svg";
-// import odometer from "./odometer.svg";
+import transmission from "./transmission.svg";
+import seats from "./seats.svg";
+import fuelType from "./fuel-type.svg";
+import odometer from "./odometer.svg";
 // import facebook from "./facebook.svg";
 // import instagram from "./instagram.svg";
 // import twitter from "./twitter.svg";
@@ -40,7 +40,7 @@ import img4 from "./img4.png";
 // import img5 from "../assets/img5.png";
 // import img6 from "../assets/img6.png";
 // import img7 from "../assets/img7.png";
-// import img8 from "../assets/img8.png";
+import img8 from "../assets/img8.png";
 // import img9 from "../assets/img9.png";
 // import img10 from "../assets/img10.png";
 // import img11 from "../assets/img11.png";
@@ -49,7 +49,7 @@ import img4 from "./img4.png";
 // import cImg4 from "../assets/cImg4.png";
 import about1 from "../assets/about1.png";
 import about2 from "../assets/about2.png";
-// import banner from "../assets/banner.png";
+import banner from "../assets/banner.png";
 // import agencyReg from "../assets/agencyReg.png";
 // import uploadIcon from "../assets/upload_icon.png";
 // Blogs
@@ -74,10 +74,10 @@ export const assets = {
   calendar,
   // star,
   sliders,
-  // odometer,
-  // transmission,
-  // seats,
-  // fuelType,
+  odometer,
+  transmission,
+  seats,
+  fuelType,
   // car,
   // carBlack,
   // carPlus,
@@ -99,7 +99,7 @@ export const assets = {
   // user3,
   about1,
   about2,
-  // banner,
+  banner,
   // agencyReg,
   // uploadIcon,
 };
@@ -276,41 +276,42 @@ export const dummyCars = [
     updatedAt: "2025-04-10T06:23:20.252Z",
     __v: 0,
   },
-  // {
-  //   _id: "67f7663b197ac559e4089bb8",
-  //   agency: dummyAgencyData,
-  //   title: "Porsche Taycan Turbo S",
-  //   description:
-  //     "All-electric performance sedan offering instant torque, precise handling, and luxurious cabin comfort. Ideal for buyers seeking EV performance without sacrificing refinement.",
-  //   address: "1 Palm Jumeirah, Abu Dhabi, UAE",
-  //   city: "Abu Dhabi",
-  //   country: "UAE",
-  //   bodyType: "Sedan",
-  //   price: {
-  //     rent: 499,
-  //     sale: 35000,
-  //   },
-  //   specs: {
-  //     transmission: "Automatic",
-  //     seats: 4,
-  //     fuelType: "Hybrid",
-  //   },
-  //   odometer: 12000,
-  //   features: [
-  //     "Rear Camera",
-  //     "Apple CarPlay",
-  //     "Keyless Entry",
-  //     "Adaptive Cruise",
-  //     "Sunroof",
-  //     "Parking Assist",
-  //   ],
-  //   images: [img8, cImg2, cImg4, cImg3],
-  //   isAvailable: true,
-  //   status: "available",
-  //   createdAt: "2025-04-10T06:29:30.000Z",
-  //   updatedAt: "2025-04-10T06:29:30.000Z",
-  //   __v: 0,
-  // },
+  {
+    _id: "67f7663b197ac559e4089bb8",
+    agency: dummyAgencyData,
+    title: "Porsche Taycan Turbo S",
+    description:
+      "All-electric performance sedan offering instant torque, precise handling, and luxurious cabin comfort. Ideal for buyers seeking EV performance without sacrificing refinement.",
+    address: "1 Palm Jumeirah, Abu Dhabi, UAE",
+    city: "Abu Dhabi",
+    country: "UAE",
+    bodyType: "Sedan",
+    price: {
+      rent: 499,
+      sale: 35000,
+    },
+    specs: {
+      transmission: "Automatic",
+      seats: 4,
+      fuelType: "Hybrid",
+    },
+    odometer: 12000,
+    features: [
+      "Rear Camera",
+      "Apple CarPlay",
+      "Keyless Entry",
+      "Adaptive Cruise",
+      "Sunroof",
+      "Parking Assist",
+    ],
+    // images: [img8, cImg2, cImg4, cImg3],
+    images: [img8],
+    isAvailable: true,
+    status: "available",
+    createdAt: "2025-04-10T06:29:30.000Z",
+    updatedAt: "2025-04-10T06:29:30.000Z",
+    __v: 0,
+  },
   // {
   //   _id: "67f765aa197ac559e4089b9c",
   //   agency: dummyAgencyData,

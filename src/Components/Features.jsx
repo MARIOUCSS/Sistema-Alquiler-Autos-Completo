@@ -32,7 +32,7 @@ function Features() {
     cart();
   }, [dummyCars]);
   return (
-    <section className="max-padd-container">
+    <section className="max-padd-container py-16 xl:py-24">
       <Title
         title={"Your Next Car Awaits"}
         title2={"Start Driving With Ease"}
@@ -67,9 +67,9 @@ function Features() {
         // }}
         // navigation={true}
         modules={[Autoplay]}
-        className="h-[478px] md:h-[533px] xl:h-[422px] mt-5 bg-red-300"
+        className="h-[478px] md:h-[533px] xl:h-[422px] mt-5 "
       >
-        {features.slice(0, 3).map((car) => (
+        {features.slice(0, 5).map((car) => (
           <SwiperSlide>
             <Item car={car} />
           </SwiperSlide>

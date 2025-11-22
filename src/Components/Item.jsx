@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { assets } from "../assets/data";
 
 function Item({ car }) {
   const currency = "$";
@@ -14,20 +15,47 @@ function Item({ car }) {
         navigate("/listing/" + car._id);
         scroll(0, 0);
       }}
-      className=""
+      className="block rounded-lg ring-1 ring-slate-900/5 p-5 cursor-pointer"
       style={{ background: bgColor }}
     >
-      <h4>{car.title}</h4>
-      <div>
-        <h5>{car.bodyType}</h5>
-        <div>
+      <h4 className="line-clamp-1">{car.title}</h4>
+      <div className="flexBetween">
+        <h5 className="my-1 text-gray-100">{car.bodyType}</h5>
+        <div className="text-sm font-bold text-solid">
           {currency}
           {car.price.sale}|{currency}
           {car.price.rent}.00<span className="text-xs">/day</span>
         </div>
       </div>
+      <div className="relative py-6">
+        <img src={car.images} alt={car.title} />
+      </div>
+      <div>
+        <div className="flexBetween py-2">
+          <p className="flexCenter flex-col gap-1 font-semibold">
+            <img src={assets.transmission} alt="" width={19} />
+            {car.specs.transmission}
+          </p>
+          <hr className="h-11 w-0.5 bg-slate-900/20 border-none" />
+          <p className="flexCenter flex-col gap-1 font-semibold">
+            <img src={assets.seats} alt="" width={23} />
+            {car.specs.transmission}
+          </p>
+          <hr className="h-11 w-0.5 bg-slate-900/20 border-none" />
+          <p className="flexCenter flex-col gap-1 font-semibold">
+            <img src={assets.fuelType} alt="" width={19} />
+            {car.specs.transmission}
+          </p>
+          <hr className="h-11 w-0.5 bg-slate-900/20 border-none" />
+          <p className="flexCenter flex-col gap-1 font-semibold">
+            <img src={assets.odometer} alt="" width={19} />
+            {car.specs.transmission}
+          </p>
+        </div>
+        <p className="pt-2 mb-4 line-clamp-2">{car.description}</p>
+      </div>
     </div>
   );
 }
-
+// 2:40
 export default Item;
