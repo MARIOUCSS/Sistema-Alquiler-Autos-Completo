@@ -7,7 +7,7 @@ import bg from "./bg.png";
 // import right from "./right.svg";
 import pin from "./pin.svg";
 import calendar from "./calendar.svg";
-// import star from "./star.svg";
+import star from "./star.svg";
 import sliders from "./sliders.svg";
 // import car from "./car.svg";
 // import carBlack from "./car-black.svg";
@@ -29,9 +29,9 @@ import odometer from "./odometer.svg";
 // import list from "./list.svg";
 // import dashboard from "./dashboard.svg";
 import userImg from "./user.png";
-// import user1 from "./user1.png";
-// import user2 from "./user2.png";
-// import user3 from "./user3.png";
+import user1 from "./user1.png";
+import user2 from "./user2.png";
+//import user3 from "./user3.png";
 import img1 from "./img1.png";
 
 import img2 from "./img2.png";
@@ -72,7 +72,7 @@ export const assets = {
   // right,
   pin,
   calendar,
-  // star,
+  star,
   sliders,
   odometer,
   transmission,
@@ -94,16 +94,21 @@ export const assets = {
   // dashboard,
   // list,
   userImg,
-  // user1,
-  // user2,
-  // user3,
+  user1,
+  user2,
+  //user3,
   about1,
   about2,
   banner,
   // agencyReg,
   // uploadIcon,
 };
-
+export const precios = [
+  "$0 to 20000",
+  "$20000 to 30000",
+  "$30000 to 50000",
+  "$50000 to 99000",
+];
 export const cities = ["Abu Dhabi", "New York", "Toronto", "Berlin"];
 
 export const dummyAgentData = {

@@ -6,7 +6,8 @@ import CardDetails from "./Pages/CardDetails";
 import Contact from "./Pages/Contact";
 import MyBookings from "./Pages/MyBookings";
 import Home from "./Pages/Home";
-import Footer from "./Components/Footer";
+//import Footer from "./Components/Footer";
+import Footers from "./Components/Footers";
 function App() {
   return (
     <>
@@ -19,7 +20,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/my-booking" element={<MyBookings />} />
         </Routes>
-        <Footer />
+        <Footers />
       </BrowserRouter>
     </>
   );
