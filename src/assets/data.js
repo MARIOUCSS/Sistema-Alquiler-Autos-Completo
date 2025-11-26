@@ -182,7 +182,7 @@ export const dummyCars = [
     address: "301 Sunset Boulevard, Los Angeles, USA",
     city: "Los Angeles",
     country: "USA",
-    bodyType: "SUV",
+    bodyType: "Suv",
     price: {
       rent: 599,
       sale: 29000,
