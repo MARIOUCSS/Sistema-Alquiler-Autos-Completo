@@ -14,3 +14,7 @@ export const priceRange = [
   "30000 to 50000",
   "50000 to 99000",
 ];
+export const RangoPrice = (priceranges) => {
+  const [min, max] = priceranges.split(" to ").map(Number);
+  return { min, max };
+};

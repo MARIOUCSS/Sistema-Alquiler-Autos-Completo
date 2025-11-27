@@ -1,47 +1,100 @@
-import React, { useEffect, useState } from "react";
+import React, { useMemo, useState } from "react";
 //import { precios } from "../assets/data";
 import { bodyType, priceRange, sortOptions } from "./Exportables";
 //import { dummyCars } from "../assets/data";
 import Item from "../Components/Item";
 import { useGlobalState } from "../Context/CartContext";
+import { RangoPrice } from "./Exportables";
 function Listing() {
   const { dummyCars } = useGlobalState();
+  //const [filterProduct, setFilterProduct] = useState([]);
   const [carType, setcarType] = useState([]);
   const [rangePrice, setrangePrice] = useState([]);
   const [sortType, setSortType] = useState("Relevant");
+
   const ToogleFilter = (value, setState) => {
     setState((prev) =>
       prev.includes(value) ? prev.filter((x) => x !== value) : [...prev, value]
     );
     //si el valor esta incluido en el array de setcarty);
   };
-  const ApplyFilter = () => {
-    let filterProduct = [...dummyCars];
+  const filterProduct = useMemo(() => {
+    // Paso 1: Aplicar filtros
+    let filtered = [...dummyCars];
+
+    // Filtro por tipo de carro
     if (carType.length) {
-      filterProduct = filterProduct.filter((x) => carType.includes(x.bodyType));
+      filtered = filtered.filter((car) => carType.includes(car.bodyType));
     }
-    if(rangePrice.length){
-      
-      filterProduct=
+
+    // Filtro por rango de precio
+    if (rangePrice.length) {
+      filtered = filtered.filter((car) => {
+        const carPrice = car.price.sale;
+        return rangePrice.some((range) => {
+          const { min, max } = RangoPrice(range);
+          return carPrice >= min && carPrice <= max;
+        });
+      });
     }
-    return filterProduct;
-  };
-  const ApplySorting = (ProductList) => {
+
+    // Paso 2: Aplicar ordenamiento
+    const sorted = [...filtered]; // Crear copia para no mutar
     switch (sortType) {
       case "Low to High":
-        return ProductList.sort((a, b) => a.price.rent - b.price.rent);
+        return sorted.sort((a, b) => a.price.rent - b.price.rent);
       case "High to Low":
-        return ProductList.sort((a, b) => b.price.rent - a.price.rent);
+        return sorted.sort((a, b) => b.price.rent - a.price.rent);
       default:
-        return ProductList;
+        return sorted;
     }
-  };
-  useEffect(() => {
-    const Applyfill = ApplyFilter();
-    const ApplyPrice = ApplySorting(Applyfill);
-    console.log(ApplyPrice);
-    console.log(rangePrice);
-  }, [carType, sortType, rangePrice]);
+  }, [carType, sortType, rangePrice, dummyCars]);
+  // const ApplyPrice = (productlist) => {
+  //   return productlist.filter((car) => {
+  //     const CarFil = car.price.sale;
+  //     //Esto retornara v o f solo se quedan los verdadero
+  //     return rangePrice.some((x) => {
+  //       const { min, max } = RangoPrice(x);
+  //       return CarFil > min && CarFil < max;
+  //     });
+  //   });
+  // };
+  // const ApplyFilter = () => {
+  //   let filterProduct = [...dummyCars];
+  //   if (carType.length) {
+  //     filterProduct = filterProduct.filter((x) => carType.includes(x.bodyType));
+  //   }
+
+  //   if (rangePrice.length) {
+  //     filterProduct = ApplyPrice(filterProduct);
+  //   }
+  //   return filterProduct;
+  // };
+
+  // const ApplySorting = (ProductList) => {
+  //   switch (sortType) {
+  //     case "Low to High":
+  //       return ProductList.sort((a, b) => a.price.rent - b.price.rent);
+  //     case "High to Low":
+  //       return ProductList.sort((a, b) => b.price.rent - a.price.rent);
+  //     default:
+  //       return ProductList;
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   const Applyfill = ApplyFilter();
+  //   const sortedProducts = ApplySorting(Applyfill);
+  //   setFilterProduct(sortedProducts);
+  //   // Este efecto sincroniza el estado local con los filtros aplicados
+  //   // que es una transformación derivada del estado
+  // }, [carType, sortType, rangePrice]);
+  // const filterProduct = useMemo(() => {
+  //   const Applyfill = ApplyFilter();
+  //   return ApplySorting(Applyfill);
+  //   const sortedProducts = ApplySorting(Applyfill);
+  // }, [carType, sortType, rangePrice, dummyCars]);
+
   const currency = "$";
   return (
     <section className="max-padd-container py-14 bg-primary">
@@ -102,8 +155,8 @@ function Listing() {
         {/* {right} */}
         <div className="bg-white p-3 rounded-2xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-3 gap-y-5">
-            {dummyCars.length > 0 ? (
-              dummyCars.map((cars) => <Item key={cars._id} car={cars} />)
+            {filterProduct.length > 0 ? (
+              filterProduct.map((cars) => <Item key={cars._id} car={cars} />)
             ) : (
               <p className="capitalize">No Carts found for selected filters.</p>
             )}
