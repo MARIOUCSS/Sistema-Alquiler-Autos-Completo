@@ -37,8 +37,8 @@ import img1 from "./img1.png";
 import img2 from "./img2.png";
 import img3 from "./img3.png";
 import img4 from "./img4.png";
-// import img5 from "../assets/img5.png";
-// import img6 from "../assets/img6.png";
+import img5 from "../assets/img5.png";
+import img6 from "../assets/img6.png";
 // import img7 from "../assets/img7.png";
 import img8 from "../assets/img8.png";
 // import img9 from "../assets/img9.png";
@@ -317,77 +317,77 @@ export const dummyCars = [
     updatedAt: "2025-04-10T06:29:30.000Z",
     __v: 0,
   },
-  // {
-  //   _id: "67f765aa197ac559e4089b9c",
-  //   agency: dummyAgencyData,
-  //   title: "Porsche 718 Boxster",
-  //   description:
-  //     "Convertible with a refined chassis and retractable top for open-air driving. Comfortable seating for four, responsive handling, and modern infotainment for weekend drives.",
-  //   address: "1 Palm Jumeirah, Abu Dhabi, UAE",
-  //   city: "Abu Dhabi",
-  //   country: "USA",
-  //   bodyType: "Convertible",
-  //   price: {
-  //     rent: 499,
-  //     sale: 44000,
-  //   },
-  //   specs: {
-  //     transmission: "Automatic",
-  //     seats: 4,
-  //     fuelType: "Electric",
-  //   },
-  //   odometer: 22500,
-  //   features: [
-  //     "Parking Assist",
-  //     "Cruise Control",
-  //     "Rear Camera",
-  //     "Apple CarPlay",
-  //     "Keyless Entry",
-  //     "Heated Seats",
-  //   ],
-  //   images: [img5, cImg3, cImg2, cImg4],
-  //   isAvailable: true,
-  //   status: "available",
-  //   createdAt: "2025-04-10T06:27:30.013Z",
-  //   updatedAt: "2025-04-10T06:27:30.013Z",
-  //   __v: 0,
-  // },
+  {
+    _id: "67f765aa197ac559e4089b9c",
+    agency: dummyAgencyData,
+    title: "Porsche 718 Boxster",
+    description:
+      "Convertible with a refined chassis and retractable top for open-air driving. Comfortable seating for four, responsive handling, and modern infotainment for weekend drives.",
+    address: "1 Palm Jumeirah, Abu Dhabi, UAE",
+    city: "Abu Dhabi",
+    country: "USA",
+    bodyType: "Convertible",
+    price: {
+      rent: 499,
+      sale: 44000,
+    },
+    specs: {
+      transmission: "Automatic",
+      seats: 4,
+      fuelType: "Electric",
+    },
+    odometer: 22500,
+    features: [
+      "Parking Assist",
+      "Cruise Control",
+      "Rear Camera",
+      "Apple CarPlay",
+      "Keyless Entry",
+      "Heated Seats",
+    ],
+    images: [img5],
+    isAvailable: true,
+    status: "available",
+    createdAt: "2025-04-10T06:27:30.013Z",
+    updatedAt: "2025-04-10T06:27:30.013Z",
+    __v: 0,
+  },
 
-  // {
-  //   _id: "67f765f4197ac559e4089ba4",
-  //   agency: dummyAgencyData,
-  //   title: "Mercedes-Benz Sprinter 3500",
-  //   description:
-  //     "Utility cargo van designed for trades and deliveries. Large load area, durable interior surfaces, practical access points, and reliable mechanicals for daily work.",
-  //   address: "88 Willow Lane, Edinburgh, UK",
-  //   city: "Edinburgh",
-  //   country: "UK",
-  //   bodyType: "Van",
-  //   price: {
-  //     rent: 199,
-  //     sale: 22000,
-  //   },
-  //   specs: {
-  //     transmission: "Dual-clutch",
-  //     seats: 3,
-  //     fuelType: "Petrol",
-  //   },
-  //   odometer: 76000,
-  //   features: [
-  //     "Rear Camera",
-  //     "Keyless Entry",
-  //     "Apple CarPlay",
-  //     "Parking Assist",
-  //     "Adaptive Cruise",
-  //     "Cruise Control",
-  //   ],
-  //   images: [img6, cImg2, cImg3, cImg4],
-  //   isAvailable: true,
-  //   status: "available",
-  //   createdAt: "2025-04-10T06:28:50.013Z",
-  //   updatedAt: "2025-04-10T06:28:50.013Z",
-  //   __v: 0,
-  // },
+  {
+    _id: "67f765f4197ac559e4089ba4",
+    agency: dummyAgencyData,
+    title: "Mercedes-Benz Sprinter 3500",
+    description:
+      "Utility cargo van designed for trades and deliveries. Large load area, durable interior surfaces, practical access points, and reliable mechanicals for daily work.",
+    address: "88 Willow Lane, Edinburgh, UK",
+    city: "Edinburgh",
+    country: "UK",
+    bodyType: "Van",
+    price: {
+      rent: 199,
+      sale: 22000,
+    },
+    specs: {
+      transmission: "Dual-clutch",
+      seats: 3,
+      fuelType: "Petrol",
+    },
+    odometer: 76000,
+    features: [
+      "Rear Camera",
+      "Keyless Entry",
+      "Apple CarPlay",
+      "Parking Assist",
+      "Adaptive Cruise",
+      "Cruise Control",
+    ],
+    images: [img6],
+    isAvailable: true,
+    status: "available",
+    createdAt: "2025-04-10T06:28:50.013Z",
+    updatedAt: "2025-04-10T06:28:50.013Z",
+    __v: 0,
+  },
 
   // {
   //   _id: "67f7660a197ac559e4089bb0",

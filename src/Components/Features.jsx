@@ -69,7 +69,7 @@ function Features() {
         modules={[Autoplay]}
         className="h-[478px] md:h-[533px] xl:h-[422px] mt-5 "
       >
-        {features.slice(0, 5).map((car) => (
+        {features.slice(0, 6).map((car) => (
           <SwiperSlide>
             <Item car={car} />
           </SwiperSlide>

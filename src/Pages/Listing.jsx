@@ -11,13 +11,25 @@ function Listing() {
   const [carType, setcarType] = useState([]);
   const [rangePrice, setrangePrice] = useState([]);
   const [sortType, setSortType] = useState("Relevant");
-
+  //Paginador
+  //Pagina Actual
+  const [currPage, setcurrPage] = useState(1);
+  //Cantidad por Pagina
+  const Itemsperpage = 6;
+  //
   const ToogleFilter = (value, setState) => {
     setState((prev) =>
       prev.includes(value) ? prev.filter((x) => x !== value) : [...prev, value]
     );
     //si el valor esta incluido en el array de setcarty);
   };
+  // const GetPaginatedCars = () => {
+  //   //1-1*6 =0
+  //   //0+6=6
+  //   const startIndex = (currPage - 1) * Itemsperpage;
+  //   const endIndex = startIndex + Itemsperpage;
+  //   return filterProduct.slice(startIndex, endIndex);
+  // };
   const filterProduct = useMemo(() => {
     // Paso 1: Aplicar filtros
     let filtered = [...dummyCars];
@@ -49,52 +61,15 @@ function Listing() {
         return sorted;
     }
   }, [carType, sortType, rangePrice, dummyCars]);
-  // const ApplyPrice = (productlist) => {
-  //   return productlist.filter((car) => {
-  //     const CarFil = car.price.sale;
-  //     //Esto retornara v o f solo se quedan los verdadero
-  //     return rangePrice.some((x) => {
-  //       const { min, max } = RangoPrice(x);
-  //       return CarFil > min && CarFil < max;
-  //     });
-  //   });
-  // };
-  // const ApplyFilter = () => {
-  //   let filterProduct = [...dummyCars];
-  //   if (carType.length) {
-  //     filterProduct = filterProduct.filter((x) => carType.includes(x.bodyType));
-  //   }
 
-  //   if (rangePrice.length) {
-  //     filterProduct = ApplyPrice(filterProduct);
-  //   }
-  //   return filterProduct;
-  // };
-
-  // const ApplySorting = (ProductList) => {
-  //   switch (sortType) {
-  //     case "Low to High":
-  //       return ProductList.sort((a, b) => a.price.rent - b.price.rent);
-  //     case "High to Low":
-  //       return ProductList.sort((a, b) => b.price.rent - a.price.rent);
-  //     default:
-  //       return ProductList;
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const Applyfill = ApplyFilter();
-  //   const sortedProducts = ApplySorting(Applyfill);
-  //   setFilterProduct(sortedProducts);
-  //   // Este efecto sincroniza el estado local con los filtros aplicados
-  //   // que es una transformación derivada del estado
-  // }, [carType, sortType, rangePrice]);
-  // const filterProduct = useMemo(() => {
-  //   const Applyfill = ApplyFilter();
-  //   return ApplySorting(Applyfill);
-  //   const sortedProducts = ApplySorting(Applyfill);
-  // }, [carType, sortType, rangePrice, dummyCars]);
-
+  const GetPaginatedCars = () => {
+    //1-1*6 =0 si suma 1 =2-1 *6 6
+    //0+6=6  si 6+6=12 slice (6,12)
+    const startIndex = (currPage - 1) * Itemsperpage;
+    const endIndex = startIndex + Itemsperpage;
+    return filterProduct.slice(startIndex, endIndex);
+  };
+  const TotalPages = Math.ceil(filterProduct.length / Itemsperpage);
   const currency = "$";
   return (
     <section className="max-padd-container py-14 bg-primary">
@@ -155,11 +130,50 @@ function Listing() {
         {/* {right} */}
         <div className="bg-white p-3 rounded-2xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-3 gap-y-5">
-            {filterProduct.length > 0 ? (
-              filterProduct.map((cars) => <Item key={cars._id} car={cars} />)
+            {GetPaginatedCars().length > 0 ? (
+              GetPaginatedCars().map((cars) => (
+                <Item key={cars._id} car={cars} />
+              ))
             ) : (
               <p className="capitalize">No Carts found for selected filters.</p>
             )}
+          </div>
+          {/* {Pagination} */}
+          <div className="flexCenter flex flex-wrap mt-12 mb-10 gap-3">
+            <button
+              //1===1 inhabilitado true
+              disabled={currPage === 1}
+              onClick={() => setcurrPage((prev) => prev - 1)}
+              className={`btn-solid py-1 px-3 ${
+                currPage == 1 && "opacity-50 cursor-not-allowed"
+              }`}
+            >
+              Previous
+            </button>
+            {/* //Array.from([10, 20, 30], (valor, i) => valor + i)
+// → [10, 21, 32] */}
+            {/* Array.from({ length: 10 }, (_, i) => i) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] */}
+            {Array.from({ length: TotalPages }, (_, index) => (
+              <button
+                key={index + 1}
+                className={`btn-outline h-8 w-8 p-0 flexCenter ${
+                  currPage === index + 1 && "btn-light"
+                }`}
+                onClick={() => setcurrPage(index + 1)}
+              >
+                {index + 1}
+              </button>
+            ))}
+            <button
+              //  6==6 inhabilitado true
+              disabled={currPage === TotalPages}
+              onClick={() => setcurrPage((prev) => prev + 1)}
+              className={`btn-solid !py-1 !px-3 ${
+                currPage === TotalPages && "opacity-50 cursor-not-allowed"
+              }`}
+            >
+              Next
+            </button>
           </div>
         </div>
       </div>
