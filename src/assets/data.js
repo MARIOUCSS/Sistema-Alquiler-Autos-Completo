@@ -20,8 +20,8 @@ import odometer from "./odometer.svg";
 // import instagram from "./instagram.svg";
 // import twitter from "./twitter.svg";
 // import linkedin from "./linkedin.svg";
-// import mail from "./mail.svg";
-// import phone from "./phone.svg";
+import mail from "./mail.svg";
+import phone from "./phone.svg";
 // import house from "./house.svg";
 // import dollar from "./dollar.svg";
 // import pound from "./pound.svg";
@@ -85,8 +85,8 @@ export const assets = {
   // instagram,
   // twitter,
   // linkedin,
-  // mail,
-  // phone,
+  mail,
+  phone,
   // dollar,
   // house,
   // pound,
