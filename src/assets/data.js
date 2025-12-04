@@ -44,9 +44,9 @@ import img8 from "../assets/img8.png";
 // import img9 from "../assets/img9.png";
 // import img10 from "../assets/img10.png";
 // import img11 from "../assets/img11.png";
-// import cImg2 from "../assets/cImg2.png";
-// import cImg3 from "../assets/cImg3.png";
-// import cImg4 from "../assets/cImg4.png";
+import cImg2 from "../assets/cImg2.png";
+import cImg3 from "../assets/cImg3.png";
+import cImg4 from "../assets/cImg4.png";
 import about1 from "../assets/about1.png";
 import about2 from "../assets/about2.png";
 import banner from "../assets/banner.png";
@@ -166,7 +166,7 @@ export const dummyCars = [
       "Heated Seats",
       "Sunroof",
     ],
-    images: [img1],
+    images: [img1, cImg2, cImg3, cImg4],
     isAvailable: true,
     status: "available",
     createdAt: "2025-04-10T06:26:04.013Z",
@@ -201,7 +201,7 @@ export const dummyCars = [
       "Parking Assist",
       "Cruise Control",
     ],
-    images: [img2],
+    images: [img2, cImg2, cImg3, cImg4],
     //images: [img2, cImg3, cImg4, cImg2],
     isAvailable: true,
     status: "available",
@@ -237,7 +237,7 @@ export const dummyCars = [
       "Parking Assist",
       "Rear Camera",
     ],
-    images: [img3],
+    images: [img3, cImg2, cImg3, cImg4],
     //images: [img3, cImg4, cImg3, cImg2],
     isAvailable: true,
     status: "available",
@@ -533,53 +533,53 @@ export const dummyCars = [
 ];
 
 // // User Bookings Dummy Data
-// export const dummyBookingsData = [
-//   {
-//     _id: "67f76839994a731e97d3b8ce",
-//     user: dummyAgentData,
-//     car: dummyCars[1],
-//     agency: dummyAgencyData,
-//     pickUpDate: "2025-04-30T00:00:00.000Z",
-//     dropOffDate: "2025-05-01T00:00:00.000Z",
-//     totalPrice: 299,
-//     status: "pending",
-//     paymentMethod: "Stripe",
-//     isPaid: false,
-//     createdAt: "2025-04-10T06:42:01.529Z",
-//     updatedAt: "2025-04-10T06:43:54.520Z",
-//     __v: 0,
-//   },
-//   {
-//     _id: "67f76829994a731e97d3b8c3",
-//     user: dummyAgentData,
-//     car: dummyCars[0],
-//     agency: dummyAgencyData,
-//     pickUpDate: "2025-04-27T00:00:00.000Z",
-//     dropOffDate: "2025-04-28T00:00:00.000Z",
-//     totalPrice: 399,
-//     status: "pending",
-//     paymentMethod: "Pay at Pick-up",
-//     isPaid: false,
-//     createdAt: "2025-04-10T06:41:45.873Z",
-//     updatedAt: "2025-04-10T06:41:45.873Z",
-//     __v: 0,
-//   },
-//   {
-//     _id: "67f76810994a731e97d3b8b4",
-//     user: dummyAgentData,
-//     car: dummyCars[3],
-//     agency: dummyAgencyData,
-//     pickUpDate: "2025-04-11T00:00:00.000Z",
-//     dropOffDate: "2025-04-12T00:00:00.000Z",
-//     totalPrice: 199,
-//     status: "pending",
-//     paymentMethod: "Pay at Pick-up",
-//     isPaid: true,
-//     createdAt: "2025-04-10T06:41:20.501Z",
-//     updatedAt: "2025-04-10T06:41:20.501Z",
-//     __v: 0,
-//   },
-// ];
+export const dummyBookingsData = [
+  {
+    _id: "67f76839994a731e97d3b8ce",
+    user: dummyAgentData,
+    car: dummyCars[1],
+    agency: dummyAgencyData,
+    pickUpDate: "2025-04-30T00:00:00.000Z",
+    dropOffDate: "2025-05-01T00:00:00.000Z",
+    totalPrice: 299,
+    status: "pending",
+    paymentMethod: "Stripe",
+    isPaid: false,
+    createdAt: "2025-04-10T06:42:01.529Z",
+    updatedAt: "2025-04-10T06:43:54.520Z",
+    __v: 0,
+  },
+  {
+    _id: "67f76829994a731e97d3b8c3",
+    user: dummyAgentData,
+    car: dummyCars[0],
+    agency: dummyAgencyData,
+    pickUpDate: "2025-04-27T00:00:00.000Z",
+    dropOffDate: "2025-04-28T00:00:00.000Z",
+    totalPrice: 399,
+    status: "pending",
+    paymentMethod: "Pay at Pick-up",
+    isPaid: false,
+    createdAt: "2025-04-10T06:41:45.873Z",
+    updatedAt: "2025-04-10T06:41:45.873Z",
+    __v: 0,
+  },
+  {
+    _id: "67f76810994a731e97d3b8b4",
+    user: dummyAgentData,
+    car: dummyCars[3],
+    agency: dummyAgencyData,
+    pickUpDate: "2025-04-11T00:00:00.000Z",
+    dropOffDate: "2025-04-12T00:00:00.000Z",
+    totalPrice: 199,
+    status: "pending",
+    paymentMethod: "Pay at Pick-up",
+    isPaid: true,
+    createdAt: "2025-04-10T06:41:20.501Z",
+    updatedAt: "2025-04-10T06:41:20.501Z",
+    __v: 0,
+  },
+];
 
 // // Blogs Dummy Data with Descriptions
 // export const blogs = [
